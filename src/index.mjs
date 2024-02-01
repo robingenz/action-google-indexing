@@ -1,6 +1,8 @@
-/**
- * The entrypoint for the action.
- */
+import * as core from '@actions/core'
 import { run } from './main.mjs'
 
-run()
+try {
+  await run()
+} catch (error) {
+  core.setFailed(error.message)
+}
