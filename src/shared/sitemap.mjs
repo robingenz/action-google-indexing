@@ -1,3 +1,4 @@
+import * as core from '@actions/core'
 import Sitemapper from 'sitemapper'
 import { fetchRetry } from './utils.mjs'
 
