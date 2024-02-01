@@ -1,11 +1,11 @@
-const core = require('@actions/core')
-const { wait } = require('./wait')
+import * as core from '@actions/core'
+import { wait } from './wait.mjs'
 
 /**
  * The main function for the action.
  * @returns {Promise<void>} Resolves when the action is complete.
  */
-async function run() {
+export const run = async () => {
   try {
     const ms = core.getInput('milliseconds', { required: true })
 
@@ -23,8 +23,4 @@ async function run() {
     // Fail the workflow run if an error occurs
     core.setFailed(error.message)
   }
-}
-
-module.exports = {
-  run
 }
