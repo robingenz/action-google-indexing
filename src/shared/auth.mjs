@@ -1,7 +1,7 @@
 import { google } from 'googleapis'
 
-export async function getAccessToken(GCP_SA_KEY) {
-  const key = JSON.parse(GCP_SA_KEY)
+export async function getAccessToken(gcpServiceAccountKey) {
+  const key = JSON.parse(gcpServiceAccountKey)
   const jwtClient = new google.auth.JWT(
     key.client_email,
     null,

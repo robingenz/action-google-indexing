@@ -17,10 +17,10 @@ You can read more about the motivation behind it and how it works in [this blog 
   with:
     # The domain or site URL of the site to be indexed.
     # Required.
-    SITE_URL: ''
+    siteUrl: ''
     # The GCP service account key in JSON format.
     # Required.
-    GCP_SA_KEY: ''
+    gcpServiceAccountKey: ''
 ```
 
 ## Example
@@ -36,8 +36,8 @@ jobs:
     steps:
       - uses: robingenz/google-indexing-action@main
         with:
-          SITE_URL: 'example.tld'
-          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+          siteUrl: 'example.tld'
+          gcpServiceAccountKey: ${{ secrets.GCP_SA_KEY }}
 ```
 
 ## License

@@ -39,7 +39,5 @@ jobs:
       - name: Test Local Action
         uses: ./
         with:
-          SITE_URL: 'https://pkghub.io'
-      - name: Print Output
-        id: output
-        run: echo "${{ steps.test-action.outputs.time }}"
+          siteUrl: 'https://pkghub.io'
+          gcpServiceAccountKey: ${{ secrets.GCP_SA_KEY }}

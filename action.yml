@@ -4,15 +4,12 @@ author: 'Your name or organization here'
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  siteUrl:
+    description: 'The domain or site URL of the site to be indexed.'
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
+  gcpServiceAccountKey:
+    description: 'The GCP service account key in JSON format.'
+    required: true
 
 runs:
   using: node20
