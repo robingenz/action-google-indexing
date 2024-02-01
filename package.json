@@ -18,7 +18,7 @@
     "JavaScript"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.mjs"
   },
   "engines": {
     "node": ">=20"
@@ -27,7 +27,7 @@
     "bundle": "npm run format:write && npm run package",
     "format:write": "prettier --write **/*.js",
     "format:check": "prettier --check **/*.js",
-    "package": "ncc build src/index.js --license licenses.txt",
+    "package": "ncc build src/index.mjs --license licenses.txt",
     "package:watch": "npm run package -- --watch"
   },
   "license": "MIT",
