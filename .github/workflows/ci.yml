@@ -39,5 +39,5 @@ jobs:
       - name: Test Local Action
         uses: ./
         with:
-          siteUrl: 'https://pkghub.io'
+          siteUrl: 'pkghub.io'
           gcpServiceAccountKey: ${{ secrets.GCP_SA_KEY }}
