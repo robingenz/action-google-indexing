@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   check-dist:
-    name: Check dist/
+    name: Check `dist` directory
     runs-on: ubuntu-latest
     permissions:
       contents: read
