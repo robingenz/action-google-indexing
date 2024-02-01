@@ -25,8 +25,8 @@
   },
   "scripts": {
     "bundle": "npm run format:write && npm run package",
-    "format:write": "prettier --write **/*.js",
-    "format:check": "prettier --check **/*.js",
+    "format:write": "prettier --write **/*.mjs",
+    "format:check": "prettier --check **/*.mjs",
     "package": "ncc build src/index.mjs --license licenses.txt",
     "package:watch": "npm run package -- --watch"
   },
