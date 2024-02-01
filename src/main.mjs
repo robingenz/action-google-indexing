@@ -1,5 +1,6 @@
 import * as cache from '@actions/cache'
 import * as core from '@actions/core'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
 import { getAccessToken } from './shared/auth.mjs'
 import {
   convertToSiteUrl,
@@ -15,7 +16,9 @@ const CACHE_TIMEOUT = 1000 * 60 * 60 * 24 * 7 // 7 days
 
 export const run = async () => {
   const siteUrlInput = core.getInput('siteUrl', { required: true })
-  const gcpSaKeyInput = core.getInput('gcpServiceAccountKey', { required: true })
+  const gcpSaKeyInput = core.getInput('gcpServiceAccountKey', {
+    required: true
+  })
 
   const accessToken = await getAccessToken(gcpSaKeyInput)
   const siteUrl = convertToSiteUrl(siteUrlInput)
