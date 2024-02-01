@@ -22,31 +22,25 @@ jobs:
   check-dist:
     name: Check dist/
     runs-on: ubuntu-latest
-
     permissions:
       contents: read
       statuses: write
-
     steps:
       - name: Checkout
         id: checkout
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         id: setup-node
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
           cache: npm
-
       - name: Install Dependencies
         id: install
         run: npm ci
-
       - name: Build dist/ Directory
         id: build
         run: npm run bundle
-
       # This will fail the workflow if the PR wasn't created by Dependabot.
       - name: Compare Directories
         id: diff
@@ -56,7 +50,6 @@ jobs:
             git diff --ignore-space-at-eol --text dist/
             exit 1
           fi
-
       # If `dist/` was different than expected, and this was not a Dependabot
       # PR, upload the expected version as a workflow artifact.
       - if: ${{ failure() && steps.diff.outcome == 'failure' }}
