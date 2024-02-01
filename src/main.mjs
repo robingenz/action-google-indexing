@@ -27,7 +27,8 @@ export const run = async () => {
     .replace('http://', 'http_')
     .replace('https://', 'https_')
     .replace('/', '_')
-  const cacheKey = `gsc-indexer-${siteUrlWithoutProtocol}`
+  const cacheRestoreKey = `google-indexing-action-${siteUrlWithoutProtocol}`
+  const cacheKey = `${cacheRestoreKey}-${Date.now()}`
   const cachePath = `.cache/${siteUrlWithoutProtocol}.json`
 
   const [sitemaps, pages] = await getSitemapPages(accessToken, siteUrl)
@@ -41,7 +42,9 @@ export const run = async () => {
 
   core.info(`👉 Found ${pages.length} URLs in ${sitemaps.length} sitemap`)
 
-  const cacheKeyHit = await cache.restoreCache([cachePath], cacheKey)
+  const cacheKeyHit = await cache.restoreCache([cachePath], cacheKey, [
+    cacheRestoreKey
+  ])
   if (cacheKeyHit) {
     core.info(`👍 Cache hit, using previously cached data.`)
   }
@@ -131,5 +134,4 @@ export const run = async () => {
 
   core.info(`👍 All done!`)
   core.info(`💖 Brought to you by https://seogets.com - SEO Analytics.`)
-  core.info(``)
 }
