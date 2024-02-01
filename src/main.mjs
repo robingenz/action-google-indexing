@@ -47,6 +47,8 @@ export const run = async () => {
   ])
   if (cacheKeyHit) {
     core.info(`👍 Cache hit, using previously cached data.`)
+  } else {
+    core.info(`👎 Cache miss, fetching data from Google Search Console.`)
   }
 
   const statusPerUrl = existsSync(cachePath)
