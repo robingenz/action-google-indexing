@@ -31,8 +31,7 @@ export const run = async () => {
   const cacheKey = `${cacheRestoreKey}-${Date.now()}`
   const cacheFileName = `${convertToFilePath(siteUrl)}.json`;
   cacheFileName = cacheFileName.replace("/", "");
-  const cachePath = path.join(".cache/", cacheFileName);
-
+  const cachePath = ".cache/"+cacheFileName;
   const [sitemaps, pages] = await getSitemapPages(accessToken, siteUrl)
 
   if (sitemaps.length === 0) {
