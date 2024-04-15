@@ -29,8 +29,8 @@ export const run = async () => {
     .replace('/', '_')
   const cacheRestoreKey = `google-indexing-action-${siteUrlWithoutProtocol}`
   const cacheKey = `${cacheRestoreKey}-${Date.now()}`
-  const cacheFileName = `${convertToFilePath(siteUrl)}`+".json";
-  //const cachePath = path.join(".cache/", cacheFileName.replace("/", ""));
+  const cacheFileName = `${convertToFilePath(siteUrl)}.json`;
+  const cachePath = path.join(".cache/", cacheFileName.replace("/", ""));
 
   const [sitemaps, pages] = await getSitemapPages(accessToken, siteUrl)
 
@@ -94,7 +94,7 @@ export const run = async () => {
   core.info(``)
   core.info(`👍 Done, here's the status of all ${pages.length} pages:`)
   mkdirSync('.cache', { recursive: true })
-  //writeFileSync(cachePath, JSON.stringify(statusPerUrl, null, 2))
+  writeFileSync(cachePath, JSON.stringify(statusPerUrl, null, 2))
 
   for (const [status, pages] of Object.entries(pagesPerStatus)) {
     core.info(`• ${getEmojiForStatus(status)} ${status}: ${pages.length} pages`)
