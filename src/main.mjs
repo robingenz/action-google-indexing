@@ -30,8 +30,7 @@ export const run = async () => {
   const cacheRestoreKey = `google-indexing-action-${siteUrlWithoutProtocol}`
   const cacheKey = `${cacheRestoreKey}-${Date.now()}`
   const cacheFileName = siteUrlWithoutProtocol+".json";
-  cacheFileName = cacheFileName.replace("/", "");
-  const cachePath = ".cache/"+cacheFileName;
+  const cachePath = ".cache/"+"log.json";
   const [sitemaps, pages] = await getSitemapPages(accessToken, siteUrl)
 
   if (sitemaps.length === 0) {
