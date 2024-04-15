@@ -94,7 +94,7 @@ export const run = async () => {
   core.info(``)
   core.info(`👍 Done, here's the status of all ${pages.length} pages:`)
   mkdirSync('.cache', { recursive: true })
-  writeFileSync(cachePath, JSON.stringify(statusPerUrl, null, 2))
+  //writeFileSync(cachePath, JSON.stringify(statusPerUrl, null, 2))
 
   for (const [status, pages] of Object.entries(pagesPerStatus)) {
     core.info(`• ${getEmojiForStatus(status)} ${status}: ${pages.length} pages`)
