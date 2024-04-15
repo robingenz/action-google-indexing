@@ -29,7 +29,7 @@ export const run = async () => {
     .replace('/', '_')
   const cacheRestoreKey = `google-indexing-action-${siteUrlWithoutProtocol}`
   const cacheKey = `${cacheRestoreKey}-${Date.now()}`
-  const cacheFileName = `${convertToFilePath(siteUrl)}.json`;
+  const cacheFileName = siteUrlWithoutProtocol+".json";
   cacheFileName = cacheFileName.replace("/", "");
   const cachePath = ".cache/"+cacheFileName;
   const [sitemaps, pages] = await getSitemapPages(accessToken, siteUrl)
