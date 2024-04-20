@@ -1,4 +1,4 @@
-# google-indexing-action
+# action-google-indexing
 
 GitHub Action to get your site indexed on Google in less than 48 hours based on [goenning/google-indexing-script](https://github.com/goenning/google-indexing-script) by [@goenning](https://twitter.com/goenning).[^1]
 
@@ -13,7 +13,7 @@ You can read more about the motivation behind it and how it works in [this blog 
 ## Usage
 
 ```yaml
-- uses: robingenz/google-indexing-action@main
+- uses: robingenz/action-google-indexing@v1.0.0
   with:
     # The domain or site URL of the site to be indexed.
     # Required.
@@ -34,7 +34,7 @@ jobs:
   google-indexing:
     runs-on: ubuntu-latest
     steps:
-      - uses: robingenz/google-indexing-action@main
+      - uses: robingenz/action-google-indexing@v1.0.0
         with:
           siteUrl: 'example.tld'
           gcpServiceAccountKey: ${{ secrets.GCP_SA_KEY }}
