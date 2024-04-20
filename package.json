@@ -1,7 +1,7 @@
 {
   "name": "action-google-indexing",
   "description": "GitHub Action to index your site on Google using the Indexing API.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "",
   "private": true,
   "homepage": "https://github.com/robingenz/action-google-indexing#readme",
