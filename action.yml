@@ -1,6 +1,6 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Google Indexing'
+description: 'Index your site on Google using the Indexing API.'
+author: 'Robin Genz <mail@robingenz.dev>'
 
 # Define your inputs here.
 inputs:
