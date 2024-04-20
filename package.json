@@ -28,7 +28,8 @@
     "format:write": "prettier --write **/*.mjs",
     "format:check": "prettier --check **/*.mjs",
     "package": "ncc build src/index.mjs --license licenses.txt",
-    "package:watch": "npm run package -- --watch"
+    "package:watch": "npm run package -- --watch",
+    "release": "commit-and-tag-version"
   },
   "license": "MIT",
   "dependencies": {
@@ -41,6 +42,7 @@
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@vercel/ncc": "^0.38.1",
+    "commit-and-tag-version": "^12.4.0",
     "prettier": "^3.2.4"
   }
 }
